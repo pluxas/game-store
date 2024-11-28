@@ -62,7 +62,7 @@ const HeaderBlock = () => {
                         <GlobalImages id="down" />
                     )}
                 </div>
-                {/* <div
+                <div
                     className={
                         miniModal
                             ? styles["miniModal__active"]
@@ -92,7 +92,7 @@ const HeaderBlock = () => {
                             />
                         ))}
                     </div>
-                </div> */}
+                </div>
                 <p className="font-fontFamily font-semibold text-base text-white cursor-pointer">
                     Накопительный счет
                 </p>
