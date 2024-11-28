@@ -1,0 +1,64 @@
+.input[type="radio"] {
+    height: 1em;
+    width: 1em;
+    appearance: none;
+    background: #3D394A;
+    border-radius: 100%;
+    position: relative;
+}
+
+input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    top: 0;
+}
+
+input[type="radio"]:checked::before {
+    border: 5px solid transparent;
+    border-radius: 100%;
+    background: #4b83fc;
+    width: 5px;
+    height: 5px;
+}
+
+.button {
+    position: absolute;
+    border-radius: 12px;
+    width: 260px;
+    left: 20px;
+    padding: 20px 0;
+    backdrop-filter: blur(20px);
+    background: #77be1d;
+    transform: translateY(0%);
+    opacity: 0;
+    z-index: -99;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, z-index 0.3s ease-in-out;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+    color: #fff;
+}
+
+.img:hover .button {
+    transform: translateY(-140%);
+    opacity: 1;
+    z-index: 99;
+}
+
+.heart {
+    border-radius: 50%;
+    padding: 12px 10px;
+    background: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.img:hover .heart {
+    display: block;
+}

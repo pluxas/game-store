@@ -1,0 +1,53 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.first {
+  background-image: url('../../../../assets/images/slider_img.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 700px;
+  padding-top: 176px;
+  padding-left: 112px;
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+}
+
+.second {
+  background-image: url('../../../../assets/images/need-for-speed.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 700px;
+  padding-top: 176px;
+  padding-left: 112px;
+  width: 100%;
+  position: relative;
+}
+
+.third {
+  background-image: url('../../../../assets/images/slider_img2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 700px;
+  padding-top: 176px;
+  padding-left: 112px;
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+
+  .text {
+    color: black;
+  }
+  .price {
+    color: rgba(82, 82, 82, 0.3);
+  }
+}

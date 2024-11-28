@@ -1,0 +1,31 @@
+.switch {
+    width: 44px;
+    height: 26px;
+    background: #1e1c27;
+    border-radius: 100px;
+    padding: 4px;
+}
+
+.input[type="checkbox"] {
+    display: none;
+}
+
+.slider {
+    width: 18px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateX(0%);
+    transition: transform 0.2s ease-in;
+}
+
+.slider_checked {
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+}

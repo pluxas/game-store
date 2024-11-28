@@ -1,0 +1,27 @@
+.input[type="radio"] {
+    height: 1em;
+    width: 1em;
+    appearance: none;
+    background: #3D394A;
+    border-radius: 100%;
+    position: relative;
+}
+
+input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    top: 0;
+}
+
+input[type="radio"]:checked::before {
+    border: 5px solid transparent;
+    border-radius: 100%;
+    background: #4b83fc;
+    width: 5px;
+    height: 5px;
+}

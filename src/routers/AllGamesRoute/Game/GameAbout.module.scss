@@ -1,0 +1,21 @@
+.first,
+.second,
+.third {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: url('../../../assets/images/slider_img.avif');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 31%;
+    z-index: -99;
+}
+
+.second {
+    background-image: url(../../../assets/images/need-for-speed.png);
+}
+
+.third {
+    background-image: url(../../../assets/images/slider_img2.jpg);
+}

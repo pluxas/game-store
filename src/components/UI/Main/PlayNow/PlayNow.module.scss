@@ -1,0 +1,14 @@
+.minecraft {
+    padding: 40px;
+    border-radius: 15px;
+    position: relative;
+    background: linear-gradient(159deg, #1dbe53 0%, #ace238 100%);
+
+    &_dangerous {
+        background: linear-gradient(159deg, #ff3d23 0%, #fda828 100%);
+        padding: 40px;
+        border-radius: 15px;
+        position: relative;
+        z-index: 40;
+    }
+}
