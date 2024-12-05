@@ -1,4 +1,5 @@
 import Main from '../components/UI/Main';
+import Cart from '../pages/Cart';
 import CatalogPage from '../pages/Catalog';
 import AShirtHike from '../pages/GamePage/A Short Hike';
 import EWitne from '../pages/GamePage/EWitne';
@@ -84,6 +85,10 @@ const routes = [
   {
     path: '/Catalog/*',
     element: CatalogPage
+  },
+  {
+    path: '/Cart/*',
+    element: Cart
   }
 ];
 

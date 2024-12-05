@@ -60,10 +60,10 @@ const Nav = () => {
                     <div className="cursor-pointer">
                         <GlobalSvgIcons id="heart" />
                     </div>
-                    <div className="relative cursor-pointer">
+                    <Link to={"/Cart"} className="relative cursor-pointer">
                         <span className={styles["span"]}>{lengthCart}</span>
                         <GlobalSvgIcons id="cart" />
-                    </div>
+                    </Link>
                 </div>
             </nav>
         </>

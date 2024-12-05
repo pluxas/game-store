@@ -39,6 +39,7 @@ export default {
         'need-for-speed': 'url("/src/assets/images/need-for-speed.png")',
         'need-for-speed-payback': 'url(/src/assets/images/slider_img2.jpg)',
         'need-for-speed-2015': 'url(/src/assets/images/slider_img.avif)',
+        'cart-bg': 'url(/src/assets/images/cart-bg.png)',
         'firstCardBackground': 'linear-gradient(159deg, #1dbe53 0%, #ace238 100%);',
         'linear': 'linear-gradient(#06030F, #06030F)'
       },

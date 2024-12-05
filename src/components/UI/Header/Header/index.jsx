@@ -2,48 +2,43 @@ import { useEffect, useState } from "react";
 
 import { GlobalSvgIcons } from "../../../../assets/icons/GlobalSvgIcons";
 import { GlobalImages } from "../../../../assets/images/GlobalImages";
+import Modal from "./Modal";
 
-import styles from "./Header.module.scss";
-import LanguageModal from "./LanguageModal";
-import MoneyModal from "./MoneyModal";
 import { setCurrency } from "../../../../slices/changeCurrency";
-
-import { useDispatch, useSelector } from "react-redux";
 import { setLanguage, setType } from "../../../../slices/changeLanguage";
 
-// ! изменения языка при помощи redux toolkit и перенести часть модально окно в новый файл 
-// TODO: начать корзину 
+import { useDispatch, useSelector } from "react-redux";
 
 const HeaderBlock = () => {
     const [miniModal, setMiniModal] = useState(false);
 
-    const dispatch = useDispatch()
-    const currency = useSelector((state) => state.changingCurrency.currency)
-    const language = useSelector((state) => state.changingLanguage)
+    const dispatch = useDispatch();
+    const currency = useSelector((state) => state.changingCurrency.currency);
+    const language = useSelector((state) => state.changingLanguage);
 
-    const globalLanguage = language.language    
-    const typeOfLanguage = language.type
-
-    useEffect(() => {
-        localStorage.setItem('currency', currency)
-    }, [currency])
+    const globalLanguage = language.language;
+    const typeOfLanguage = language.type;
 
     useEffect(() => {
-            localStorage.setItem("language", globalLanguage);
-            localStorage.setItem("typeOfLanguage", typeOfLanguage)
+        localStorage.setItem("currency", currency);
+    }, [currency]);
+
+    useEffect(() => {
+        localStorage.setItem("language", globalLanguage);
+        localStorage.setItem("typeOfLanguage", typeOfLanguage);
     }, [language]);
 
     const handleChangeLanguage = (language) => {
         setMiniModal(false);
-        dispatch(setLanguage(language))
-        dispatch(setType(language.slice(-2)))
+        dispatch(setLanguage(language));
+        dispatch(setType(language.slice(-2)));
     };
 
     const handleChangeCurrency = (currency) => {
-        dispatch(setCurrency(currency))
+        dispatch(setCurrency(currency));
         setMiniModal(false);
     };
-    
+
     return (
         <header className="flex items-center justify-between mt-5">
             <div className="flex items-center gap-20 relative">
@@ -62,37 +57,13 @@ const HeaderBlock = () => {
                         <GlobalImages id="down" />
                     )}
                 </div>
-                <div
-                    className={
-                        miniModal
-                            ? styles["miniModal__active"]
-                            : styles.miniModal
-                    }
-                >
-                    <div className="flex flex-col">
-                        {["Русский RU", "English EN"].map(
-                            (item, index) => (
-                                <LanguageModal
-                                    key={index}
-                                    item={item}
-                                    selectedItem={language.language}
-                                    onClick={handleChangeLanguage}
-                                />
-                            )
-                        )}
-                    </div>
-                    <div className="border border-solid border-[#171320] w-full my-2"></div>
-                    <div className="flex items-center gap-2">
-                        {["$", "€", "₽"].map((item, index) => (
-                            <MoneyModal
-                                key={index}
-                                item={item}
-                                selectedItem={currency}
-                                onClick={() => handleChangeCurrency(item)}
-                            />
-                        ))}
-                    </div>
-                </div>
+                <Modal
+                    miniModal={miniModal}
+                    handleChangeCurrency={handleChangeCurrency}
+                    handleChangeLanguage={handleChangeLanguage}
+                    language={language}
+                    currency={currency}
+                />
                 <p className="font-fontFamily font-semibold text-base text-white cursor-pointer">
                     Накопительный счет
                 </p>

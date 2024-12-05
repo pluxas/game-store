@@ -63,7 +63,7 @@ const Card = ({ game }) => {
                         <GlobalImages id="top-four" />
                     </div>
                     <div className={styles.heart}>
-                        <GlobalSvgIcons id="heart" />
+                        <GlobalSvgIcons id="heart-one" />
                     </div>
                 </div>
                 <Link to={name}>
