@@ -17,7 +17,8 @@ export const SwiperGames = [
             CPU: 'Intel Quad Core or AMD Six Core',
             RAM: '8 GB ОЗУ',
             videoCard: 'Nvidia GeForce GTX 660 3GB or AMD Radeon HD 7870'
-        }
+        },
+        quantity: 1,
     },
     {
         id: 2,
@@ -33,7 +34,8 @@ export const SwiperGames = [
             CPU: 'Intel Quad Core or AMD Six Core',
             RAM: '8 GB ОЗУ',
             videoCard: 'Nvidia GeForce GTX 660 3GB or AMD Radeon HD 7870'
-        }
+        },
+        quantity: 1,
     },
     {
         id: 3,
@@ -49,6 +51,7 @@ export const SwiperGames = [
             CPU: 'ntel i5 4690K @ 3.5GHz or AMD FX 8350 @ 4.0GHz with 4 hardware threads',
             RAM: '8 GB ОЗУ',
             videoCard: 'AMD Radeon™ RX 480 4GB, NVIDIA GeForce® GTX 1060 6GB'
-        }
+        },
+        quantity: 1,
     },
 ]

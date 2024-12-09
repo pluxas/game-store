@@ -26,7 +26,8 @@ export const AllGames = [
             CPU: 'Intel Core i3-2125 или AMD A8-5600K',
             RAM: '4 GB ОЗУ',
             videoCard: 'GeForce GTX 650 или Radeon R7 250.'
-        }
+        },
+        quantity: 1,
     },
     {
         // position: 'Хит продаж',
@@ -43,7 +44,8 @@ export const AllGames = [
             CPU: 'Intel Core i3',
             RAM: '2 GB ОЗУ',
             videoCard: 'Intel HD Graphics 4000 с поддержкой OpenGL 4.4.'
-        }
+        },
+        quantity: 1,
     },
     {
         id: 3,
@@ -63,7 +65,8 @@ export const AllGames = [
             CPU: 'Intel Core i3-2120 | AMD FX-4350',
             RAM: '4 GB ОЗУ',
             videoCard: 'Nvidia GTS 450 | AMD Radeon HD 5750'
-        }
+        },
+        quantity: 1,
     },
     {
         id: 4,
@@ -78,7 +81,8 @@ export const AllGames = [
             CPU: 'Intel Core i3-3210.',
             RAM: '8 GB ОЗУ',
             videoCard: 'GeForce 780'
-        }
+        },
+        quantity: 1,
     },
     {
         id: 5,
@@ -98,7 +102,8 @@ export const AllGames = [
             CPU: '2.4GHz CPU Quad Core',
             RAM: '8 GB ОЗУ',
             videoCard: 'Geforce GTX 780 / Radeon R9 290X'
-        }
+        },
+        quantity: 1,
     },
     {
         id: 6,
@@ -114,6 +119,7 @@ export const AllGames = [
             RAM: '6 GB ОЗУ',
             videoCard: 'Nvidia GTX 560 Ti/Radeon HD 6950'
         },
+        quantity: 1,
     },
     {
         id: 7,
@@ -128,7 +134,8 @@ export const AllGames = [
             CPU: 'Intel Core 2 Duo с тактовой частотой 2,0 ГГц или эквивалентный AMD процессор',
             RAM: '1 GB ОЗУ',
             videoCard: 'NVIDIA GeForce 7600 GT или ATI Radeon X700 XT с 256 МБ видеопамяти'
-        }
+        },
+        quantity: 1,
     },
     {
         id: 8,
@@ -143,7 +150,8 @@ export const AllGames = [
             CPU: 'Intel Core 2 Duo @ 2.4GHz or AMD Athlon Phenom X2 @ 2.8Ghz AMD.',
             RAM: '4 GB ОЗУ',
             videoCard: 'GeForce 450GT or Radeon HD 5750 or better, with 512Mb or greater.'
-        }
+        },
+        quantity: 1,
     },
     {
         id: 9,
@@ -163,7 +171,8 @@ export const AllGames = [
             CPU: 'Intel or AMD Dual Core at 2 GHz or better',
             RAM: '2 GB ОЗУ',
             videoCard: 'Intel Graphics 4400 or better'
-        }
+        },
+        quantity: 1,
     },
     {
         id: 10,
@@ -178,7 +187,8 @@ export const AllGames = [
             CPU: 'Intel Core 2 Duo E4500 (2.2GHz)/AMD Athlon 64 X2 5600+ (2.8GHz)',
             RAM: '4 GB ОЗУ',
             videoCard: '1 GB, DirectX 11, AMD Radeon HD 6750/NVIDIA GeForce GT 640.'
-        }
+        },
+        quantity: 1,
     },
     {
         id: 11,
@@ -194,6 +204,7 @@ export const AllGames = [
             RAM: '6 GB ОЗУ',
             videoCard: 'NVIDIA GeForce GTX660 / AMD R9 270X (2GB VRAM with Shader Model 5.0 or better)'
         },
+        quantity: 1,
     },
     {
         id: 12,
@@ -213,6 +224,7 @@ export const AllGames = [
             CPU: 'Intel Core i3-3210.',
             RAM: '2 GB ОЗУ',
             videoCard: 'Intel HD Graphics 4000 с поддержкой OpenGL 4.4.'
-        }
+        },
+        quantity: 1,
     },
 ];
