@@ -1,6 +1,7 @@
 import Main from '../components/UI/Main';
 import Cart from '../pages/Cart';
 import CatalogPage from '../pages/Catalog';
+import FreeGames from '../pages/FreeGames';
 import AShirtHike from '../pages/GamePage/A Short Hike';
 import EWitne from '../pages/GamePage/EWitne';
 import Eastshade from '../pages/GamePage/Eastshade';
@@ -89,6 +90,10 @@ const routes = [
   {
     path: '/Cart/*',
     element: Cart
+  },
+  {
+    path: '/Free',
+    element: FreeGames
   }
 ];
 

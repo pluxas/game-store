@@ -30,18 +30,23 @@ export default {
         'input': 'rgba(196, 196, 196, 0.05)',
         'clear': 'rgba(255, 255, 255, 0.05)',
         'playNowButton': 'rgba(255, 255, 255, 0.1)',
-        'green': '#77be1d'
+        'green': '#77be1d',
+        'registration': 'rgba(119, 190, 29, 0.1)',
+        'raffleGameBg': 'linear-gradient(191deg, #dcad52 0%, #c19c55 100%)'
       },
       borderColor: {
-        'border-after-header': 'rgba(255, 255, 255, 0.1)'
+        'border-after-header': 'rgba(255, 255, 255, 0.1)',
+        'green': '#77be1d',
       },
       backgroundImage: {
         'need-for-speed': 'url("/src/assets/images/need-for-speed.png")',
         'need-for-speed-payback': 'url(/src/assets/images/slider_img2.jpg)',
         'need-for-speed-2015': 'url(/src/assets/images/slider_img.avif)',
         'cart-bg': 'url(/src/assets/images/cart-bg.png)',
+        'freeGameBg': 'url(/src/assets/images/freegamebg.png)',
         'firstCardBackground': 'linear-gradient(159deg, #1dbe53 0%, #ace238 100%);',
-        'linear': 'linear-gradient(#06030F, #06030F)'
+        'linear': 'linear-gradient(#06030F, #06030F)',
+        'freeCard': 'linear-gradient(57deg, #06030f 0%, rgba(6, 3, 15, 0.28) 97.96%)'
       },
       screens: {
         'my-laptop': '1537px'

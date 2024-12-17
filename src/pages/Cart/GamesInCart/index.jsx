@@ -14,9 +14,11 @@ const GamesInCart = () => {
     const dispatch = useDispatch();
 
     const deleteGameInCart = (game) => {
-        dispatch(removeProduct(game));
+        if(state.map(game => game.id === game.id)) {
+            dispatch(removeProduct(game));
+        }
     };
-
+    
     const IncreaseGameQuantity = (game) => {
         dispatch(increaseQuantity(game));
     };
@@ -35,8 +37,8 @@ const GamesInCart = () => {
 
     return (
         <div className="mt-10 flex flex-col gap-8 w-[892px]">
-            {state.map((game, index) => (
-                <div className="flex justify-between items-center" key={index}>
+            {state.map(game => (
+                <div className="flex justify-between items-center" key={game.id}>
                     <div className="flex gap-8">
                         <img
                             className="w-[200px] h-[270px]"

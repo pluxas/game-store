@@ -17,7 +17,7 @@ export const addProduct = createSlice({
             }
         },
         removeProduct(state, { payload }) {
-            state.cart = state.cart.filter((game) => game.id !== payload.id);
+            state.cart = state.cart.filter((game) => (game.id) !== (payload.id));
         },
         increaseQuantity(state, { payload }) {
             state.cart = state.cart.map((item) =>
@@ -28,14 +28,22 @@ export const addProduct = createSlice({
         },
         decreaseQuantity(state, { payload }) {
             state.cart = state.cart.map((item) =>
-                item.id === payload.id && item.quantity > 1 
+                item.id === payload.id && item.quantity > 1
                     ? { ...item, quantity: item.quantity - 1 }
                     : item
             );
         },
+        clearCart(state) {
+            state.cart = []
+        }
     },
 });
 
-export const { addingProduct, removeProduct, increaseQuantity, decreaseQuantity } =
-    addProduct.actions;
+export const {
+    addingProduct,
+    removeProduct,
+    increaseQuantity,
+    decreaseQuantity,
+    clearCart
+} = addProduct.actions;
 export default addProduct.reducer;

@@ -53,9 +53,9 @@ const Nav = () => {
                         <GlobalSvgIcons id="lupv" />
                     </div>
                 </div>
-                <p className="font-fontFamily font-medium text-base text-green cursor-pointer">
+                <Link to='/Free' className="font-fontFamily font-medium text-base text-green cursor-pointer">
                     Бесплатно
-                </p>
+                </Link>
                 <div className="flex items-center gap-6">
                     <div className="cursor-pointer">
                         <GlobalSvgIcons id="heart" />

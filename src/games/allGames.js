@@ -13,7 +13,6 @@ import eleventh from '../assets/images/catalogImages/11.png'
 
 export const AllGames = [
     {
-        new: 'Новинка',
         id: 1,
         images: first,
         priceBecome: 500,
@@ -30,8 +29,6 @@ export const AllGames = [
         quantity: 1,
     },
     {
-        // position: 'Хит продаж',
-        new: 'Новинка',
         id: 2,
         images: secondImg,
         priceBecome: 510,

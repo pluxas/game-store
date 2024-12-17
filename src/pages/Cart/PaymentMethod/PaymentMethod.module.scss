@@ -1,0 +1,13 @@
+.block {
+    width: 100%;
+    padding: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.185);
+    border-radius: 24px;
+
+    &-active {
+        width: 100%;
+        padding: 35px;
+        border: 2px solid #77be1d;
+        border-radius: 23px;
+    }
+}
