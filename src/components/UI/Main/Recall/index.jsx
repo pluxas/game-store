@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { GlobalSvgIcons } from "../../../../assets/icons/GlobalSvgIcons";
 
 import trustpilot from "../../../../assets/images/trustpilot.png";
@@ -9,9 +10,9 @@ const Recall = () => {
                 <h1 className="font-fontFamily font-medium text-3xl text-white">
                     Отзывы{" "}
                 </h1>
-                <button className="flex items-center gap-3 border border-solid border-border-after-header rounded-lg py-4 px-10 font-secondFamily font-medium text-base text-[#336edc]">
+                <Link to='/Reviews' className="flex items-center gap-3 border border-solid border-border-after-header rounded-lg py-4 px-10 font-secondFamily font-medium text-base text-[#336edc]">
                     Оставить отзыв <GlobalSvgIcons id="needle" />
-                </button>
+                </Link>
             </div>
             <div className="flex items-center gap-5 mt-14">
                 <div className="flex flex-col items-center gap-y-4">

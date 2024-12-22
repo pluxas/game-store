@@ -46,7 +46,6 @@ export default {
         'freeGameBg': 'url(/src/assets/images/freegamebg.png)',
         'firstCardBackground': 'linear-gradient(159deg, #1dbe53 0%, #ace238 100%);',
         'linear': 'linear-gradient(#06030F, #06030F)',
-        'freeCard': 'linear-gradient(57deg, #06030f 0%, rgba(6, 3, 15, 0.28) 97.96%)'
       },
       screens: {
         'my-laptop': '1537px'

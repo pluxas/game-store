@@ -17,6 +17,9 @@ import SeasonsAfterFall from '../pages/GamePage/SeasonsAfterFall';
 import ShapeOfTheWorld from '../pages/GamePage/ShapeOfTheWorld';
 import Unravel from '../pages/GamePage/Unravel';
 import Yonder from '../pages/GamePage/Yonder';
+import Reviews from '../pages/Reviews';
+import Support from '../pages/Support';
+import OurAdvantages from '../pages/ourAdvantages';
 
 const routes = [
   {
@@ -94,6 +97,18 @@ const routes = [
   {
     path: '/Free',
     element: FreeGames
+  },
+  {
+    path: '/Reviews',
+    element: Reviews
+  }, 
+  {
+    path: '/Support',
+    element: Support
+  },
+  {
+    path: '/OurAdvantages',
+    element: OurAdvantages
   }
 ];
 

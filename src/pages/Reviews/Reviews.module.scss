@@ -1,0 +1,25 @@
+.block {
+    background-image: url('../../assets/images/reviewsBg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    margin-top: 50px;
+
+    img {
+        padding: 270px 280px;
+    }
+
+    button {
+        padding: 30px 60px;
+        text-align: center;
+        backdrop-filter: blur(100px);
+        background: linear-gradient(57deg, #06030f 0%, rgba(6, 3, 15, 0.28) 97.96%);
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
+        font-size: 48px;
+        color: #fff;
+        margin-top: -70px;
+        border-radius: 20px;
+        margin-left: 300px;
+    }
+}

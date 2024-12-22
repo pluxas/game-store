@@ -8,6 +8,7 @@ import { setCurrency } from "../../../../slices/changeCurrency";
 import { setLanguage, setType } from "../../../../slices/changeLanguage";
 
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const HeaderBlock = () => {
     const [miniModal, setMiniModal] = useState(false);
@@ -27,6 +28,30 @@ const HeaderBlock = () => {
         localStorage.setItem("language", globalLanguage);
         localStorage.setItem("typeOfLanguage", typeOfLanguage);
     }, [language]);
+
+    const words = [
+        {
+            id: 1,
+            title: 'Новости',
+            // router: 'News'
+        },
+        {
+            id: 2,
+            title: 'Каталог',
+            router: 'Catalog',
+        },
+        {
+            id: 3,
+            title: 'Контакты и поддержка',
+            router: 'Support'
+        },
+        {
+            id: 4,
+            title: 'Наши преимущества',
+            router: 'OurAdvantages'
+        },
+        
+    ]
 
     const handleChangeLanguage = (language) => {
         setMiniModal(false);
@@ -68,19 +93,13 @@ const HeaderBlock = () => {
                     Накопительный счет
                 </p>
                 <ul className="flex items-center gap-8">
-                    {[
-                        "Отзывы",
-                        "Гарантии",
-                        "Как купить",
-                        "Накопительная",
-                        "Заработай",
-                    ].map((item, index) => (
-                        <li
+                    {words.map((item, index) => (
+                        <Link to={item.router}
                             key={index}
                             className="font-fontFamily font-semibold text-base text-white cursor-pointer border-b-2 border-transparent hover:border-white transition duration-300"
                         >
-                            {item}
-                        </li>
+                            {item.title}
+                        </Link>
                     ))}
                 </ul>
             </div>
