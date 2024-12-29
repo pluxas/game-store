@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 
 import styles from "./SearchCards.module.scss";
 import { GlobalSvgIcons } from "../../../../../assets/icons/GlobalSvgIcons";
+import { useDispatch } from "react-redux";
+import { addingProduct } from "../../../../../slices/addingProductByCart";
 
 const SearchCards = ({ game, closeSearchModal }) => {
     const { id, images, priceBecome, price, title, name } = game;
+    
+    const dispatch = useDispatch()
 
     return (
         <div key={id} className="flex items-center justify-between">
@@ -57,7 +61,7 @@ const SearchCards = ({ game, closeSearchModal }) => {
                 </div>
             </div>
             <div className="flex flex-col gap-1">
-                <div className="p-3 border border-solid border-[#E6E6E7] rounded-full w-11 h-11 cursor-pointer">
+                <div className="p-3 border border-solid border-[#E6E6E7] rounded-full w-11 h-11 cursor-pointer" onClick={() => dispatch(addingProduct(game))}>
                     <GlobalSvgIcons id='cart-two'/>
                 </div>
                 <div className="py-3 px-2 border border-solid border-[#E6E6E7] rounded-full w-11 h-11 cursor-pointer">

@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-
 const Card = ({ game }) => {
     const {
         id,
@@ -24,30 +23,30 @@ const Card = ({ game }) => {
         radioButtonSecond,
         name,
     } = game;
-    const dispatch = useDispatch()
-    const state = useSelector((state) => state.addingProduct.cart)
-    const currency = useSelector((state) => state.changingCurrency.currency)
+    const dispatch = useDispatch();
+    const state = useSelector((state) => state.addingProduct.cart);
+    const currency = useSelector((state) => state.changingCurrency.currency);
 
     const addProduct = (item) => {
-        dispatch(addingProduct(item))
-    }
+        dispatch(addingProduct(item));
+    };
 
-    const stateToJson = JSON.stringify(state)
+    const stateToJson = JSON.stringify(state);
 
     useEffect(() => {
-        localStorage.setItem('games', stateToJson)
-    }, [state])
+        localStorage.setItem("games", stateToJson);
+    }, [state]);
 
     // let changingPrice = 0
-    
+
     // const changePrice = (key) => {
     //     switch (key) {
     //         case '$':
     //             return changingPrice += priceDollar
     //         case '₽':
-    //             return changingPrice += priceBecome   
+    //             return changingPrice += priceBecome
     //         case '€':
-    //             return changingPrice += priceEuro     
+    //             return changingPrice += priceEuro
     //         default:
     //             break;
     //     }
@@ -73,7 +72,14 @@ const Card = ({ game }) => {
                         alt="game image"
                     />
                 </Link>
-                <button onClick={() => addProduct(game)} className={styles.button}>В корзину</button>
+                <button
+                    onClick={() => addProduct(game)}
+                    className={styles.button}
+                >
+                    {state.some((item) => item.id === id)
+                        ? "Добавлен в корзину"
+                        : "В корзину"}
+                </button>
             </div>
             <div className="flex items-center gap-5 mt-5">
                 <p className="font-fontFamily font-medium text-2xl text-white">
@@ -85,7 +91,10 @@ const Card = ({ game }) => {
                 <div className="relative">
                     <span className="border border-solid border-[#38353f] w-full absolute rotate-12 top-3"></span>
                     <p className="font-fontFamily font-normal text-lg text-clear">
-                        <del>{price}{localStorage.getItem('money')}</del>
+                        <del>
+                            {price}
+                            {localStorage.getItem("money")}
+                        </del>
                     </p>
                 </div>
             </div>

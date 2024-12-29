@@ -33,7 +33,6 @@ const HeaderBlock = () => {
         {
             id: 1,
             title: 'Новости',
-            // router: 'News'
         },
         {
             id: 2,
@@ -103,12 +102,13 @@ const HeaderBlock = () => {
                     ))}
                 </ul>
             </div>
-            <div className="flex items-center gap-6 cursor-pointer">
+            {/* <div className="flex items-center gap-6 cursor-pointer">
                 <h1 className="font-fontFamily font-semibold text-base text-white">
                     Hanzed Rules
                 </h1>
                 <GlobalImages id="user_logo" />
-            </div>
+            </div> */}
+            <Link to='/Registration' className="font-fontFamily font-semibold text-xl text-white bg-green py-2 px-5 rounded-xl">Войти</Link>
         </header>
     );
 };

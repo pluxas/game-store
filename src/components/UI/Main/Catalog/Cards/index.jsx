@@ -8,9 +8,9 @@ import { addingProduct } from "../../../../../slices/addingProductByCart";
 const Card = ({ game }) => {
     const { id, images, priceBecome, price, title, name } = game;
 
-    const dispatch = useDispatch()
-    const currency = useSelector((state) => state.changingCurrency.currency)
-
+    const dispatch = useDispatch();
+    const currency = useSelector((state) => state.changingCurrency.currency);
+    const state = useSelector((state) => state.addingProduct.cart);
 
     return (
         <div key={id} className="relative">
@@ -22,7 +22,14 @@ const Card = ({ game }) => {
                         alt="game image"
                     />
                 </Link>
-                <button onClick={() => dispatch(addingProduct(game))} className={styles.button}>В корзину</button>
+                <button
+                    onClick={() => dispatch(addingProduct(game))}
+                    className={styles.button}
+                >
+                    {state.some((item) => item.id === id)
+                        ? "Добавлен в корзину"
+                        : "В корзину"}
+                </button>
             </div>
             <div className="flex items-center gap-5 mt-5">
                 <p className="font-fontFamily font-medium text-2xl text-white">

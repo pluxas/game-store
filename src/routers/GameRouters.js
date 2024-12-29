@@ -17,6 +17,7 @@ import SeasonsAfterFall from '../pages/GamePage/SeasonsAfterFall';
 import ShapeOfTheWorld from '../pages/GamePage/ShapeOfTheWorld';
 import Unravel from '../pages/GamePage/Unravel';
 import Yonder from '../pages/GamePage/Yonder';
+import Registration from '../pages/Registration';
 import Reviews from '../pages/Reviews';
 import Support from '../pages/Support';
 import OurAdvantages from '../pages/ourAdvantages';
@@ -109,6 +110,10 @@ const routes = [
   {
     path: '/OurAdvantages',
     element: OurAdvantages
+  },
+  {
+    path: '/Registration',
+    element: Registration
   }
 ];
 

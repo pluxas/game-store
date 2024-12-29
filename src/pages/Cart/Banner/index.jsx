@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Banner = () => {
     return (
         <div className="bg-cart-bg p-7 bg-no-repeat mt-8">
@@ -10,9 +12,11 @@ const Banner = () => {
                 <br />и использовать их при оплате до
                 <span className="font-extrabold">50%</span> стоимости товаров.
             </p>
-            <button className="border border-solid bg-white rounded-2xl py-3 px-6 font-fontFamily font-normal text-base text-black mt-8">
-                Войти
-            </button>
+            <Link to="/Registration">
+                <button className="border border-solid bg-white rounded-2xl py-3 px-6 font-fontFamily font-normal text-base text-black mt-8">
+                    Войти
+                </button>
+            </Link>
         </div>
     );
 };

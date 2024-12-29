@@ -38,6 +38,7 @@ const Search = ({
                 <input
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
+                    autoFocus
                     type="text"
                     placeholder="Поиск..."
                     className="my-6 mx-7 w-full border-none bg-transparent text-white focus:outline-none placeholder:text-gray-300"

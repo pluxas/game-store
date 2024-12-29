@@ -1,15 +1,12 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { GlobalSvgIcons } from "../../../../assets/icons/GlobalSvgIcons";
 import { GlobalImages } from "../../../../assets/images/GlobalImages";
-
 import { AllGames } from "../../../../games/allGames";
-
-import { Link } from "react-router-dom";
-
 import styles from "../Header/Header.module.scss";
 import Search from "./Search";
-import { useSelector } from "react-redux";
 
 
 const Nav = () => {
@@ -32,7 +29,7 @@ const Nav = () => {
     const lengthCart = state.length
 
     return (
-        <>
+        <div>
             {searchModal && <Search search={search} setSearch={setSearch} closeSearchModal={closeSearchModal} searchModal={searchModal} filterGames={filterGames} />}
             <nav className="flex items-center justify-between mt-5">
                 <Link
@@ -48,7 +45,7 @@ const Nav = () => {
                     <div className="cursor-pointer">
                         <GlobalSvgIcons id="lines" />
                     </div>
-                    <div onClick={openSearchModal} className="flex items-start justify-between py-4 px-7 bg-input rounded-xl w-input cursor-pointer relative">
+                    <div onClick={openSearchModal} className="flex items-start justify-between py-4 px-7 bg-gray-900 rounded-xl w-input cursor-pointer relative">
                         <div className="text-white">Поиск</div>
                         <GlobalSvgIcons id="lupv" />
                     </div>
@@ -66,7 +63,7 @@ const Nav = () => {
                     </Link>
                 </div>
             </nav>
-        </>
+        </div>
     );
 };
 
