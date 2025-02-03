@@ -1,14 +1,16 @@
 import { GlobalImages } from "../../../../../assets/images/GlobalImages";
 import { GlobalSvgIcons } from "../../../../../assets/icons/GlobalSvgIcons";
-
 import { addingProduct } from "../../../../../slices/addingProductByCart";
-
 import styles from "../TopFour.module.scss";
 
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+
+import { getAuth } from "firebase/auth";
+
+import { useTranslation } from "react-i18next";
 
 const Card = ({ game }) => {
     const {
@@ -18,6 +20,8 @@ const Card = ({ game }) => {
         priceDollar,
         priceEuro,
         price,
+        priceBecomeDollar,
+        priceBecomeEuro,
         title,
         radioButtonFirst,
         radioButtonSecond,
@@ -26,10 +30,10 @@ const Card = ({ game }) => {
     const dispatch = useDispatch();
     const state = useSelector((state) => state.addingProduct.cart);
     const currency = useSelector((state) => state.changingCurrency.currency);
+    const user = useSelector((state) => state.SignUpParameters.user);
+    const auth = getAuth;
 
-    const addProduct = (item) => {
-        dispatch(addingProduct(item));
-    };
+    const {t} = useTranslation()
 
     const stateToJson = JSON.stringify(state);
 
@@ -37,22 +41,38 @@ const Card = ({ game }) => {
         localStorage.setItem("games", stateToJson);
     }, [state]);
 
-    // let changingPrice = 0
+    useEffect(() => {
+        return () => user;
+    }, [auth]);
 
-    // const changePrice = (key) => {
-    //     switch (key) {
-    //         case '$':
-    //             return changingPrice += priceDollar
-    //         case '₽':
-    //             return changingPrice += priceBecome
-    //         case '€':
-    //             return changingPrice += priceEuro
-    //         default:
-    //             break;
-    //     }
-    // }
+    let changingPrice = 0;
+    let changingBecomePrice = 0;
+    
+    const changePrice = (key) => {
+        switch (key) {
+            case "$":
+                return (changingPrice += priceDollar);
+            case "₽":
+                return (changingPrice += priceBecome);
+            case "€":
+                return (changingPrice += priceEuro);
+            default:
+                break;
+        }
+    };
+    changePrice(currency);
 
-    // changePrice(currency)
+    const changePriceBecome = (key) => {
+        switch (key) {
+            case "$":
+                return (changingBecomePrice += priceBecomeDollar);
+            case "₽":
+                return (changingBecomePrice += price);
+            case "€":
+                return (changingBecomePrice += priceBecomeEuro);
+        }
+    };
+    changePriceBecome(currency);
 
     return (
         <div className="relative">
@@ -72,18 +92,26 @@ const Card = ({ game }) => {
                         alt="game image"
                     />
                 </Link>
-                <button
-                    onClick={() => addProduct(game)}
-                    className={styles.button}
-                >
-                    {state.some((item) => item.id === id)
-                        ? "Добавлен в корзину"
-                        : "В корзину"}
-                </button>
+                {state.some((item) => item.id === id) ? (
+                    <button className={styles.button}>
+                        {t('24')}
+                    </button>
+                ) : user ? (
+                    <button
+                        onClick={() => dispatch(addingProduct(game))}
+                        className={styles.button}
+                    >
+                        {t('13')}
+                    </button>
+                ) : (
+                    <Link to="/Registration" className={styles.button}>
+                        {t('13')}
+                    </Link>
+                )}
             </div>
             <div className="flex items-center gap-5 mt-5">
                 <p className="font-fontFamily font-medium text-2xl text-white">
-                    {priceBecome} {currency}
+                    {changingPrice} {currency}
                 </p>
                 <p className="font-fontFamily font-medium text-lg text-green">
                     -15%
@@ -92,26 +120,25 @@ const Card = ({ game }) => {
                     <span className="border border-solid border-[#38353f] w-full absolute rotate-12 top-3"></span>
                     <p className="font-fontFamily font-normal text-lg text-clear">
                         <del>
-                            {price}
-                            {localStorage.getItem("money")}
+                            {changingBecomePrice} {currency}
                         </del>
                     </p>
                 </div>
             </div>
             <p className="line-clamp-2 font-secondFamily font-normal text-base text-white my-3">
-                {title}
+                {t(`${title}`)}
             </p>
             <div className="flex items-center gap-5 ">
                 <div className="flex items-center gap-2">
                     <input type="radio" name="drone" className={styles.input} />
                     <label className="font-fontFamily font-medium text-sm text-[#747474]">
-                        {radioButtonFirst}
+                        {t(`${radioButtonFirst}`)}
                     </label>
                 </div>
                 <div className="flex items-center gap-2 z-50">
                     <input type="radio" name="drone" className={styles.input} />
                     <label className="font-fontFamily font-medium text-sm text-[#747474]">
-                        {radioButtonSecond}
+                        {t(`${radioButtonSecond}`)}
                     </label>
                 </div>
             </div>

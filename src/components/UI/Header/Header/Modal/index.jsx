@@ -1,10 +1,11 @@
 import LanguageModal from "./LanguageModal";
 import MoneyModal from "./MoneyModal";
 import styles from "../Header.module.scss";
+import { useTranslation } from "react-i18next";
 
-const Modal = ({miniModal, handleChangeLanguage, language, currency, handleChangeCurrency}) => {
-  const languageType = ["Русский RU", "English EN"]
-  const currencyType = ["$", "€", "₽"]
+const Modal = ({ miniModal, handleChangeLanguage, language, currency, handleChangeCurrency }) => {
+    const languageType = ["Русский RU", "English EN"]
+    const currencyType = ["$", "€", "₽"]
 
     return (
         <div

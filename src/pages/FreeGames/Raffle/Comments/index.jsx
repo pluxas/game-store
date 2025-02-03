@@ -1,8 +1,12 @@
+import { useTranslation } from "react-i18next";
+
 const Comments = () => {
+    const {t} = useTranslation()
+
     return (
         <div>
             <h1 className="font-fontFamily font-semibold text-4xl text-white">
-                Комментарии <span className="text-2xl text-clear">3</span>
+                {t('118')} <span className="text-2xl text-clear">3</span>
             </h1>
             <div className="mt-16 flex flex-col gap-20">
                 <div className="flex flex-col items-start gap-5">
@@ -13,11 +17,7 @@ const Comments = () => {
                         </h1>
                     </div>
                     <p className="font-fontFamily font-normal text-xl text-white">
-                        Первый мой увлажнитель. Хотела ещё приобрести когда
-                        родился ребёнок. Наткнулась на акцию и сразу же заказала
-                        прочитав про негохорошие отзывы. Стильно выглядит. Лужи
-                        под ним не остаётся.За 1,5 часа увлажнил с 33% до 40.
-                        Большой объём. Все хорошо было упаковано.{" "}
+                        {t('119')}
                     </p>
                 </div>
                 <div className="flex flex-col items-start gap-5">
@@ -28,11 +28,7 @@ const Comments = () => {
                         </h1>
                     </div>
                     <p className="font-fontFamily font-normal text-xl text-white">
-                        Первый мой увлажнитель. Хотела ещё приобрести когда
-                        родился ребёнок. Наткнулась на акцию и сразу же заказала
-                        прочитав про негохорошие отзывы. Стильно выглядит. Лужи
-                        под ним не остаётся.За 1,5 часа увлажнил с 33% до 40.
-                        Большой объём. Все хорошо было упаковано.{" "}
+                        {t('119')}
                     </p>
                 </div>
                 <div className="flex flex-col items-start gap-5">
@@ -43,11 +39,7 @@ const Comments = () => {
                         </h1>
                     </div>
                     <p className="font-fontFamily font-normal text-xl text-white">
-                        Первый мой увлажнитель. Хотела ещё приобрести когда
-                        родился ребёнок. Наткнулась на акцию и сразу же заказала
-                        прочитав про негохорошие отзывы. Стильно выглядит. Лужи
-                        под ним не остаётся.За 1,5 часа увлажнил с 33% до 40.
-                        Большой объём. Все хорошо было упаковано.{" "}
+                        {t('119')}
                     </p>
                 </div>
             </div>

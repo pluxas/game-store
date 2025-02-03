@@ -2,15 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
     {
-        title: "Только скидки",
+        title: "82",
         checked: localStorage.getItem('filter_1') === 'true'
     },
     {
-        title: "Новинки",
+        title: "83",
         checked: localStorage.getItem('filter_2') === 'true'
     },
     {
-        title: "Хит продаж",
+        title: "84",
         checked: localStorage.getItem('filter_3') === 'true'
     },
 ];

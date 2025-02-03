@@ -10,12 +10,18 @@ import checkImg from "../../assets/images/check.png";
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { getAuth } from "firebase/auth";
+import { useTranslation } from "react-i18next";
 
 const Cart = () => {
     const state = useSelector((state) => state.addingProduct.cart);
     const totalGames = state.length;
 
+    const {t} = useTranslation()
+
     const [check, setCheck] = useState(false);
+
+    const auth = getAuth()
 
     return (
         <div className="mt-12">
@@ -23,15 +29,15 @@ const Cart = () => {
                 <Link to="/" className="flex flex-col items-center">
                     <img className="w-52 h-52" src={EmptyCart} alt="" />
                     <h1 className="font-fourthFamily font-semibold text-6xl text-green">
-                        Корзина пустая
+                        {t('161')}
                     </h1>
                 </Link>
             ) : (
                 <div>
                     <h1 className="font-fontFamily font-bold text-5xl text-white">
-                        Корзина <span className="text-green">{totalGames}</span>
+                        {t('124')} <span className="text-green">{totalGames}</span>
                     </h1>
-                    <Banner />
+                    {auth.currentUser ? '' : <Banner />}
                     <GamesInCart state={state} />
                     <div className="flex items-center justify-between">
                         <PaymentMethod />

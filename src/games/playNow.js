@@ -4,7 +4,7 @@ import MinecraftDangerous from '../assets/images/Mask group.png'
 export const PlayNowGames = [
     {
         id: 1,
-        name: 'Minecraft',
+        name: '25',
         priceBecome: 4999,
         price: '6 999 P',
         className: 'minecraft',
@@ -13,7 +13,7 @@ export const PlayNowGames = [
     },
     {
         id: 2,
-        name: 'Minecraft dangerous',
+        name: '26',
         priceBecome: 4999,
         price: '6 999 P',
         className: 'minecraft_dangerous',

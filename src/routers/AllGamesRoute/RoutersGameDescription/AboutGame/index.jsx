@@ -2,9 +2,13 @@ import { useState } from "react";
 
 import GameDescription from "./GameDescriptions";
 import SystemRequirements from "../SystemRequirements";
+import { useTranslation } from "react-i18next";
 
 const RouterAboutGame = ({ game }) => {
     const [systemRequired, setSystemRequired] = useState("");
+
+    const {t} = useTranslation()
+
     const { system_required } = game;
 
     const changeState = (state) => {
@@ -21,7 +25,7 @@ const RouterAboutGame = ({ game }) => {
                         color: systemRequired === "" ? "#FFF" : "#868686",
                     }}
                 >
-                    Описание товара
+                    {t('66')}
                 </h1>
                 <h1
                     onClick={() => changeState("second")}
@@ -30,7 +34,7 @@ const RouterAboutGame = ({ game }) => {
                         color: systemRequired === "second" ? "#fff" : "#868686",
                     }}
                 >
-                    Системные требования
+                    {t('67')}
                 </h1>
             </div>
             {systemRequired === "second" ? (

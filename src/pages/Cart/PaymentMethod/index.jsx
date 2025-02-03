@@ -2,9 +2,12 @@ import { useState } from "react";
 
 import { paymentMethods } from "../../../games/paymentMethod";
 import styles from "./PaymentMethod.module.scss";
+import { useTranslation } from "react-i18next";
 
 const PaymentMethod = () => {
     const [card, setCard] = useState(0);
+
+    const {t} = useTranslation()
 
     return (
         <div className="grid grid-cols-2 mt-20 gap-5 w-[892px]">
@@ -26,7 +29,7 @@ const PaymentMethod = () => {
                                 : {color: 'white'}
                         }
                     >
-                        {paymentMethod.name}
+                        {t(`${paymentMethod.name}`)}
                     </p>
 
                     <div className="flex items-center gap-3 mt-28">

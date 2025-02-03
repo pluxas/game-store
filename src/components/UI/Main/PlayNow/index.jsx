@@ -1,21 +1,40 @@
+import { useSelector } from "react-redux";
 import { PlayNowGames } from "../../../../games/playNow";
 
 import styles from "./PlayNow.module.scss";
 
 import LazyLoad from "react-lazyload";
+import { useTranslation } from "react-i18next";
 
 const PlayNow = () => {
+    const currency = useSelector((state) => state.changingCurrency.currency);
+
+    const {t} = useTranslation()
+
+    const changePrice = (key) => {
+        switch (key) {
+            case '$':
+                return 50.11
+            case '₽':
+                return 4999
+            case '€':
+                return 48.2
+            default:
+                break;
+        }
+    }
+
     return (
         <div className="mt-24 grid grid-cols-2 gap-5">
             {PlayNowGames.map((game) => (
                 <div key={game.id} className={styles[`${game.className}`]}>
                     <div>
                         <h1 className="font-fontFamily font-extrabold text-4xl text-white z-50">
-                            Играй уже сейчас в <br /> {game.name}
+                            {t(`${game.name}`)}
                         </h1>
                         <div className="mt-5 flex items-center gap-5">
                             <p className="font-fontFamily font-extrabold text-2xl text-white">
-                                {game.priceBecome} P
+                                {changePrice(currency)} {currency}
                             </p>
                             <p className="font-fontFamily font-extrabold text-xl text-[#ffe817]">
                                 -25%
@@ -26,10 +45,10 @@ const PlayNow = () => {
                         </div>
                         <div className="mt-20 flex items-center gap-4">
                             <button className="px-10 py-5 bg-playNowButton rounded-2xl font-fontFamily font-extrabold text-lg text-white">
-                                Купить
+                                {t('13')}
                             </button>
                             <button className="font-fontFamily font-semibold text-lg text-white">
-                                В избранное
+                                {t('14')}
                             </button>
                         </div>
                     </div>

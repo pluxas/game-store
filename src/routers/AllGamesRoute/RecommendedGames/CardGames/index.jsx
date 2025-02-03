@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import styles from '../../../../components/UI/Main/Catalog/Catalog.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const CardGames = ({ game }) => {
     const {id, images, priceBecome, price, title, name} = game
+
+    const {t} = useTranslation()
 
     return (
         <Link to={`/${name}`} key={id} className="relative">
@@ -25,7 +28,7 @@ const CardGames = ({ game }) => {
                 </div>
             </div>
             <p className="line-clamp-2 font-secondFamily font-normal text-base text-white my-3">
-                {title}
+                {t(`${title}`)}
             </p>
             <div className="flex items-center gap-5 ">
                 <div className="flex items-center gap-2">
@@ -35,7 +38,7 @@ const CardGames = ({ game }) => {
                         className={styles["input"]}
                     />
                     <label className="font-fontFamily font-medium text-sm text-[#747474]">
-                        Ключ
+                        {t('16')}
                     </label>
                 </div>
                 <div className="flex items-center gap-2 z-50">
@@ -45,7 +48,7 @@ const CardGames = ({ game }) => {
                         className={styles["input"]}
                     />
                     <label className="font-fontFamily font-medium text-sm text-[#747474]">
-                        Аккаунт Steam
+                        {t('17')}
                     </label>
                 </div>
             </div>

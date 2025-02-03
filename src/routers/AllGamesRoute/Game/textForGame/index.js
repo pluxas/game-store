@@ -1,23 +1,23 @@
 export const descriptionGame = [
     {
         id: 1,
-        text: 'Жанр',
-        value: 'Приключенческие игры'
+        text: '56',
+        value: '57'
     },
     {
         id: 2,
-        text: 'Платформа',
-        value: 'Steam'
+        text: '58',
+        value: '59'
     },
     {
         id: 3,
-        text: 'Регион активации',
-        value: 'Страны СНГ'
+        text: '60',
+        value: '61'
     },
     {
         id: 4,
-        text: 'Тип товара',
-        value: 'Учетная запись'
+        text: '62',
+        value: '63'
     },
     
 ]

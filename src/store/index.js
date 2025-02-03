@@ -7,6 +7,7 @@ import filterSearch from "../slices/blockFilter/filterSearch";
 import addProduct from "../slices/addingProductByCart";
 import changeCurrency from "../slices/changeCurrency";
 import changeLanguage from "../slices/changeLanguage";
+import SignUp from "../slices/Signup";
 
 export const store = configureStore({
     reducer: {
@@ -16,7 +17,8 @@ export const store = configureStore({
         filterByName: filterSearch,
         addingProduct: addProduct,
         changingCurrency: changeCurrency,
-        changingLanguage: changeLanguage
+        changingLanguage: changeLanguage,
+        SignUpParameters: SignUp  
     },
     devTools: true,
 });

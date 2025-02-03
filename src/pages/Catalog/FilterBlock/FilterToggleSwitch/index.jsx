@@ -5,11 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleFilter } from "../../../../slices/blockFilter/filterSlider";
 
 import styles from "./Index.module.scss";
+import { useTranslation } from "react-i18next";
 
 const FilterToggleSwitch = () => {
     const dispatch = useDispatch();
     const state = useSelector((state) => state.filterBySlider)
 
+    const {t} = useTranslation()
 
     const filter = useMemo(() => state.map(item => item.checked), [state])
 
@@ -28,7 +30,7 @@ const FilterToggleSwitch = () => {
             {state.map((item, index) => (
                 <div className="flex items-center justify-between my-4" key={index}>
                     <p className="font-fontFamily font-bold text-xl text-white">
-                        {item.title}
+                        {t(`${item.title}`)}
                     </p>
                     <div
                         style={

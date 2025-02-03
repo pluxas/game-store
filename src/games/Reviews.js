@@ -8,20 +8,20 @@ export const Reviews = [
         images: one,
         name: 'Ori',
         when: '25 марта 2024',
-        comment: 'Ключ купил. Хороший сайт, всем рекомендую!'
+        comment: '102'
     },
     {
         id: 2,
         images: two,
         name: 'Unravel two',
         when: '2 июля 2024',
-        comment: 'Всё супппеееррр!'
+        comment: '103'
     },
     {
         id: 3,
         images: three,
         name: 'Minecraft',
         when: '14 декабря 2024',
-        comment: 'Шикаррную игру взял по отличной цене!!! Всем советую брать тут!%6'
+        comment: '104'
     },
 ]

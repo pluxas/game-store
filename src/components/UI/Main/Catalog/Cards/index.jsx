@@ -2,15 +2,67 @@ import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 
+import { getAuth } from "firebase/auth";
+
 import styles from "../Catalog.module.scss";
 import { addingProduct } from "../../../../../slices/addingProductByCart";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const Card = ({ game }) => {
-    const { id, images, priceBecome, price, title, name } = game;
+    const {
+        id,
+        images,
+        priceBecome,
+        price,
+        priceDollar,
+        priceEuro,
+        priceBecomeDollar,
+        priceBecomeEuro,
+        title,
+        name,
+    } = game;
 
     const dispatch = useDispatch();
     const currency = useSelector((state) => state.changingCurrency.currency);
     const state = useSelector((state) => state.addingProduct.cart);
+    const user = useSelector((state) => state.SignUpParameters.user);
+    const auth = getAuth;
+
+    const {t} = useTranslation()
+
+    useEffect(() => {
+        return () => user;
+    }, [auth]);
+
+    let changingPrice = 0;
+    let changingBecomePrice = 0;
+
+    const changePrice = (key) => {
+        switch (key) {
+            case "$":
+                return (changingPrice += priceDollar);
+            case "₽":
+                return (changingPrice += priceBecome);
+            case "€":
+                return (changingPrice += priceEuro);
+            default:
+                break;
+        }
+    };
+    changePrice(currency);
+
+    const changePriceBecome = (key) => {
+        switch (key) {
+            case "$":
+                return (changingBecomePrice += priceBecomeDollar);
+            case "₽":
+                return (changingBecomePrice += price);
+            case "€":
+                return (changingBecomePrice += priceBecomeEuro);
+        }
+    };
+    changePriceBecome(currency);
 
     return (
         <div key={id} className="relative">
@@ -22,18 +74,26 @@ const Card = ({ game }) => {
                         alt="game image"
                     />
                 </Link>
-                <button
-                    onClick={() => dispatch(addingProduct(game))}
-                    className={styles.button}
-                >
-                    {state.some((item) => item.id === id)
-                        ? "Добавлен в корзину"
-                        : "В корзину"}
-                </button>
+                {state.some((item) => item.id === id) ? (
+                    <button className={styles.button}>
+                        Добавлен в корзину
+                    </button>
+                ) : user ? (
+                    <button
+                        onClick={() => dispatch(addingProduct(game))}
+                        className={styles.button}
+                    >
+                        В корзину
+                    </button>
+                ) : (
+                    <Link to="/Registration" className={styles.button}>
+                        В корзину
+                    </Link>
+                )}
             </div>
             <div className="flex items-center gap-5 mt-5">
                 <p className="font-fontFamily font-medium text-2xl text-white">
-                    {priceBecome} {currency}
+                    {changingPrice} {currency}
                 </p>
                 <p className="font-fontFamily font-medium text-lg text-green">
                     -15%
@@ -41,12 +101,12 @@ const Card = ({ game }) => {
                 <div className="relative">
                     <span className="border border-solid border-[#38353f] w-full absolute rotate-12 top-3"></span>
                     <p className="font-fontFamily font-normal text-lg text-clear">
-                        {price}
+                        {changingBecomePrice} {currency}
                     </p>
                 </div>
             </div>
             <p className="line-clamp-2 font-secondFamily font-normal text-base text-white my-3">
-                {title}
+                {t(`${title}`)}
             </p>
             <div className="flex items-center gap-5 ">
                 <div className="flex items-center gap-2">
@@ -56,7 +116,7 @@ const Card = ({ game }) => {
                         className={styles["input"]}
                     />
                     <label className="font-fontFamily font-medium text-sm text-[#747474]">
-                        Ключ
+                        {t('16')}
                     </label>
                 </div>
                 <div className="flex items-center gap-2 z-50">
@@ -66,7 +126,7 @@ const Card = ({ game }) => {
                         className={styles["input"]}
                     />
                     <label className="font-fontFamily font-medium text-sm text-[#747474]">
-                        Аккаунт Steam
+                        {t('17')}
                     </label>
                 </div>
             </div>

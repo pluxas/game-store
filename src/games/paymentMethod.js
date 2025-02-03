@@ -10,20 +10,20 @@ import SamsungPay from '../assets/images/typeofpaymentsimg/Samsung_Pay.png'
 export const paymentMethods = [
     {
         id: 1,
-        name: 'Эллектронные кошельки',
+        name: '128',
         image_one: WebMoney,
         image_two: Qiwi,
     },
     {
         id: 2,
-        name: 'Банковские карты',
+        name: '129',
         image_one: MasterCard,
         image_two: Visa,
         image_three: Mir,
     }, 
     {
         id: 3,
-        name: 'Криптаволюта',
+        name: '130',
         image_one: Ethereum,
         image_two: Bitcoin,
     },

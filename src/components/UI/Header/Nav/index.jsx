@@ -7,12 +7,15 @@ import { GlobalImages } from "../../../../assets/images/GlobalImages";
 import { AllGames } from "../../../../games/allGames";
 import styles from "../Header/Header.module.scss";
 import Search from "./Search";
+import { useTranslation } from "react-i18next";
 
 
 const Nav = () => {
     const [search, setSearch] = useState("");
     const [searchModal, setSearchModal] = useState(false);
     const state = useSelector((state) => state.addingProduct.cart)
+
+    const {t} = useTranslation()
 
     const filterGames = AllGames.filter((game) => {
         return game.name.toLowerCase().includes(search.toLowerCase())
@@ -46,12 +49,12 @@ const Nav = () => {
                         <GlobalSvgIcons id="lines" />
                     </div>
                     <div onClick={openSearchModal} className="flex items-start justify-between py-4 px-7 bg-gray-900 rounded-xl w-input cursor-pointer relative">
-                        <div className="text-white">Поиск</div>
+                        <div className="text-white">{t('sixth')}</div>
                         <GlobalSvgIcons id="lupv" />
                     </div>
                 </div>
                 <Link to='/Free' className="font-fontFamily font-medium text-base text-green cursor-pointer">
-                    Бесплатно
+                    {t('eighth')}
                 </Link>
                 <div className="flex items-center gap-6">
                     <div className="cursor-pointer">

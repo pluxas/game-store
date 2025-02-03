@@ -12,7 +12,7 @@ const FilteredGames = () => {
         item.name.toLowerCase().includes(searchGamesByName.toLowerCase()) &&
         item.priceBecome <= filterByRange
         
-    ).sort((a, b) => filterByPrice === 'Сначала дешевые' ? a.priceBecome - b.priceBecome : b.priceBecome - a.priceBecome)
+    ).sort((a, b) => filterByPrice === '86' ? a.priceBecome - b.priceBecome : b.priceBecome - a.priceBecome)
 
     return (
         <>

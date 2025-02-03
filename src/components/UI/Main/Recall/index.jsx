@@ -2,16 +2,19 @@ import { Link } from "react-router-dom";
 import { GlobalSvgIcons } from "../../../../assets/icons/GlobalSvgIcons";
 
 import trustpilot from "../../../../assets/images/trustpilot.png";
+import { useTranslation } from "react-i18next";
 
 const Recall = () => {
+    const {t} = useTranslation()
+
     return (
         <div className="mt-16">
             <div className="flex items-center justify-between">
                 <h1 className="font-fontFamily font-medium text-3xl text-white">
-                    Отзывы{" "}
+                    {t('41')}
                 </h1>
                 <Link to='/Reviews' className="flex items-center gap-3 border border-solid border-border-after-header rounded-lg py-4 px-10 font-secondFamily font-medium text-base text-[#336edc]">
-                    Оставить отзыв <GlobalSvgIcons id="needle" />
+                    {t('42')} <GlobalSvgIcons id="needle" />
                 </Link>
             </div>
             <div className="flex items-center gap-5 mt-14">

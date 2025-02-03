@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import SearchCards from "../SearchCards";
 
 const Search = ({
@@ -7,14 +8,15 @@ const Search = ({
     setSearch,
     search,
 }) => {
+    const {t} = useTranslation()
 
     const renderGames = (search, filterGames) => {
         if (search.length === 0) {
-            return <p className="text-white text-center text-3xl mt-5">Что вы хотите найти?</p>;
+            return <p className="text-white text-center text-3xl mt-5">{t('seventh')}</p>;
         }
 
         if (filterGames.length === 0) {
-            return <p className="font-secondFamily font-bold text-4xl text-center mt-5 text-white">Игры не найдены</p>;
+            return <p className="font-secondFamily font-bold text-4xl text-center mt-5 text-white">{t('ninth')}</p>;
         }
 
         return filterGames.map((game) => (

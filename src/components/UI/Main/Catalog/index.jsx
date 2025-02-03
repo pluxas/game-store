@@ -2,24 +2,27 @@ import { Link } from "react-router-dom";
 import { AllGames } from "../../../../games/allGames";
 
 import Card from "./Cards";
+import { useTranslation } from "react-i18next";
 
 const Catalog = () => {
+    const {t} = useTranslation()
+
     return (
         <div className="mt-20">
             <ul className="flex items-center gap-8 mb-5">
                 <div className="relative">
                     <li className="font-fontFamily font-medium text-xl text-white cursor-pointer">
-                        Новинки
+                        {t('69')}
                     </li>
                     <div className="border border-solid w-full absolute mt-5"></div>
                 </div>
-                {["Аккаунты", "Ключи", "Активация", "Прокачка"].map(
+                {["70", "71", "72", "73"].map(
                     (item, idx) => (
                         <li
                             key={idx}
                             className="font-fontFamily font-medium text-xl text-[#868686] cursor-pointer"
                         >
-                            {item}
+                            {t(`${item}`)}
                         </li>
                     )
                 )}
@@ -32,7 +35,7 @@ const Catalog = () => {
             </div>
             <Link to='/Catalog'>
                 <div className="cursor-pointer border border-solid border-border-after-header rounded-2xl mt-10 py-7 text-center font-fontFamily font-semibold text-lg text-[#366edc]">
-                    Перейти в каталог
+                    {t('35')}
                 </div>
             </Link>
         </div>
