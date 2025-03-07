@@ -6,7 +6,7 @@ i18n
   .use(Backend)
   .use(initReactI18next)
   .init({
-    fallbackLng: "en",
+    fallbackLng: "ru",
     debug: true,
     backend: {
       loadPath: "/game-store/locales/{{lng}}/translation.json", // Исправленный путь
