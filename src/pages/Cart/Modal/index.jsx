@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "../../../slices/addingProductByCart";
+import { addMyOrders, clearCart } from "../../../slices/addingProductByCart";
 import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -30,6 +30,7 @@ const ModalPlaceOrder = ({ setCheck }) => {
     const clearCarted = () => {
         if (auth.currentUser) {
             setCheck(true);
+            dispatch(addMyOrders())
             dispatch(clearCart());
         } else {
             navigate('/Registration')

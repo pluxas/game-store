@@ -69,7 +69,7 @@ const Card = ({ game }) => {
             <div className={styles.img}>
                 <Link to={"/" + name}>
                     <img
-                        className="cursor-pointer h-[450px]"
+                        className="cursor-pointer "
                         src={images}
                         alt="game image"
                     />

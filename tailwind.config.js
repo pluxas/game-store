@@ -51,6 +51,12 @@ export default {
         'my-laptop': '1537px'
       }
     },
+    screens: {
+      'smallSize': '361px',
+      'normalSize': '421px',
+      'tabletSize': '811px',
+      'lg': '1025px'
+    }
   },
   plugins: [],
 }

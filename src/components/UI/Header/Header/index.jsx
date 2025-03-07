@@ -6,13 +6,12 @@ import Modal from "./Modal";
 
 import { setCurrency } from "../../../../slices/changeCurrency";
 import { setLanguage, setType } from "../../../../slices/changeLanguage";
-import { setUser, setUserName } from "../../../../slices/Signup";
 
 import { useDispatch, useSelector } from "react-redux";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import { useTranslation } from "react-i18next";
 
 const HeaderBlock = () => {
@@ -101,13 +100,13 @@ const HeaderBlock = () => {
     };
 
     return (
-        <header className="flex items-center justify-between mt-5">
-            <div className="flex items-center gap-20 relative">
+        <header className="flex items-center justify-between mt-5 ">
+            <div className="flex items-center gap-10 lg:gap-20 tabletSize:gap-16 relative">
                 <div
                     className="flex items-center gap-1 cursor-pointer"
                     onClick={() => setMiniModal(!miniModal)}
                 >
-                    <h1 className="font-fontFamily font-semibold text-base text-white">
+                    <h1 className="font-fontFamily font-semibold text-base text-white flex lg:block ">
                         {language.type}
                         <span className="text-flesh mx-0.5">/</span>
                         {currency}
@@ -125,15 +124,15 @@ const HeaderBlock = () => {
                     language={language}
                     currency={currency}
                 />
-                <p className="font-fontFamily font-semibold text-base text-white cursor-pointer">
+                <p className="font-fontFamily font-semibold text-xs text-white cursor-pointer lg:text-base tabletSize:text-sm">
                     {t('first')}
                 </p>
-                <ul className="flex items-center gap-8">
+                <ul className="flex items-center gap-6 lg:gap-8">
                     {words.map((item, index) => (
                         <Link
                             to={item.router}
                             key={index}
-                            className="font-fontFamily font-semibold text-base text-white cursor-pointer border-b-2 border-transparent hover:border-white transition duration-300"
+                            className="font-fontFamily font-semibold text-sm text-white cursor-pointer border-b-2 border-transparent hover:border-white transition duration-300 tabletSize:text-base"
                         >
                             {t(`${item.title}`)}
                         </Link>
@@ -143,9 +142,9 @@ const HeaderBlock = () => {
             {user ? (
                 <Link
                     to="/Profile"
-                    className="flex items-center gap-6 cursor-pointer"
+                    className="flex items-center gap-5 cursor-pointer lg:gap-6"
                 >
-                    <h1 className="font-fontFamily font-semibold text-base text-white">
+                    <h1 className="font-fontFamily font-semibold text-base text-white hidden tabletSize:block">
                         {name}
                     </h1>
                     {userLogo !== null ?

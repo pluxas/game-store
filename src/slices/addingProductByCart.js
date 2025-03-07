@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     cart: JSON.parse(localStorage.getItem("games")) || [],
+    myOrders: []
 };
 
 export const addProduct = createSlice({
@@ -35,6 +36,9 @@ export const addProduct = createSlice({
         },
         clearCart(state) {
             state.cart = []
+        },
+        addMyOrders(state) {
+            state.myOrders.push(...state.cart, state.myOrders)
         }
     },
 });
@@ -44,6 +48,7 @@ export const {
     removeProduct,
     increaseQuantity,
     decreaseQuantity,
-    clearCart
+    clearCart,
+    addMyOrders
 } = addProduct.actions;
 export default addProduct.reducer;

@@ -21,7 +21,7 @@ export const AllGames = [
         price: 525,
         priceBecomeDollar: 5.32,
         priceBecomeEuro: 5.11,
-        title: '27',        
+        title: '27',
         name: 'Flower',
         system_required: {
             id: '5',

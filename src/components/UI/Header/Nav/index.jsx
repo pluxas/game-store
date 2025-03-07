@@ -15,7 +15,7 @@ const Nav = () => {
     const [searchModal, setSearchModal] = useState(false);
     const state = useSelector((state) => state.addingProduct.cart)
 
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
     const filterGames = AllGames.filter((game) => {
         return game.name.toLowerCase().includes(search.toLowerCase())
@@ -34,33 +34,39 @@ const Nav = () => {
     return (
         <div>
             {searchModal && <Search search={search} setSearch={setSearch} closeSearchModal={closeSearchModal} searchModal={searchModal} filterGames={filterGames} />}
+            <div>
+                
+            </div>
             <nav className="flex items-center justify-between mt-5">
+                <div className="cursor-pointer block p-3 smallSize:hidden">
+                    <GlobalSvgIcons id="lines" />
+                </div>
                 <Link
                     to={"/"}
                     className="flex items-center gap-3 cursor-pointer"
                 >
                     <GlobalImages id="logo" />
-                    <h1 className="font-fontFamily font-extrabold text-3xl text-white">
+                    <h1 className="font-fontFamily font-extrabold text-xl mr-14 text-white smallSize:text-3xl smallSize:mr-0">
                         Playnchill
                     </h1>
                 </Link>
-                <div className="flex items-center gap-9">
-                    <div className="cursor-pointer">
-                        <GlobalSvgIcons id="lines" />
-                    </div>
-                    <div onClick={openSearchModal} className="flex items-start justify-between py-4 px-7 bg-gray-900 rounded-xl w-input cursor-pointer relative">
+                <div className="hidden smallSize:block">
+                    <div onClick={openSearchModal} className="flex items-start justify-between py-4 px-7 bg-gray-900 rounded-xl w-[300px] lg:w-input cursor-pointer relative tabletSize:w-[450px]   ">
                         <div className="text-white">{t('sixth')}</div>
                         <GlobalSvgIcons id="lupv" />
                     </div>
                 </div>
-                <Link to='/Free' className="font-fontFamily font-medium text-base text-green cursor-pointer">
+                <div className="block cursor-pointer smallSize:hidden" onClick={openSearchModal}>
+                    <GlobalSvgIcons id="lupv_two" />
+                </div>
+                <Link to='/Free' className="font-fontFamily font-medium text-base text-green cursor-pointer hidden smallSize:block">
                     {t('eighth')}
                 </Link>
                 <div className="flex items-center gap-6">
-                    <div className="cursor-pointer">
+                    <div className="cursor-pointer hidden smallSize:block">
                         <GlobalSvgIcons id="heart" />
                     </div>
-                    <Link to={"/Cart"} className="relative cursor-pointer">
+                    <Link to={"/Cart"} className="relative cursor-pointer mr-4 lg:mr-0">
                         <span className={styles["span"]}>{lengthCart}</span>
                         <GlobalSvgIcons id="cart" />
                     </Link>
