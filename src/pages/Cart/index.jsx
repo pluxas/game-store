@@ -13,6 +13,8 @@ import { useState } from "react";
 import { getAuth } from "firebase/auth";
 import { useTranslation } from "react-i18next";
 
+import useAuth from "../../hooks/use-auth";
+
 const Cart = () => {
     const state = useSelector((state) => state.addingProduct.cart);
     const totalGames = state.length;
@@ -37,7 +39,7 @@ const Cart = () => {
                     <h1 className="font-fontFamily font-bold text-5xl text-white">
                         {t('124')} <span className="text-green">{totalGames}</span>
                     </h1>
-                    {auth.currentUser ? '' : <Banner />}
+                    {useAuth ? '' : <Banner />}
                     <GamesInCart state={state} />
                     <div className="flex items-center justify-between">
                         <PaymentMethod />

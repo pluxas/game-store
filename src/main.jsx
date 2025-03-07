@@ -12,7 +12,7 @@ import './config/i18next.js'
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
-        <Router>
+        <Router basename='/game-stor'>
             <Provider store={store}>
                 <App/>
             </Provider>

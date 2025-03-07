@@ -12,7 +12,7 @@ const Account = () => {
 
     const auth = getAuth()
 
-    const name = auth.currentUser?.displayName || 'Guest';
+    const name = auth.currentUser?.displayName ?? 'Guest';
     const userLogo = auth.currentUser?.photoURL 
     const firstLetterOfName = name[0].toUpperCase()
 

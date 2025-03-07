@@ -35,7 +35,7 @@ export const addProduct = createSlice({
             );
         },
         clearCart(state) {
-            state.cart = []
+            state.cart = [] 
         },
         addMyOrders(state) {
             state.myOrders.push(...state.cart, state.myOrders)
